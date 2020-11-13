@@ -1,3 +1,6 @@
-﻿  MyForm.cpp
-  MyForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+﻿  CJugador.cpp
+  CObjeto.cpp
+  MyForm.cpp
+  Generando código...
+  CJugador.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   PJLaberintoPLP.vcxproj -> C:\Users\51968\source\repos\PJLaberintoPLP\Debug\PJLaberintoPLP.exe
