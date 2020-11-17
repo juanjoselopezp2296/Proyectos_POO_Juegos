@@ -1,3 +1,6 @@
 C:\Users\51968\source\repos\PJLaberintoPLP\PJLaberintoPLP\Debug\PJLaberintoPLP.vcxprojAssemblyReference.cache
 C:\Users\51968\source\repos\PJLaberintoPLP\PJLaberintoPLP\Debug\PJLaberintoPLP.MyForm.resources
 C:\Users\51968\source\repos\PJLaberintoPLP\PJLaberintoPLP\Debug\PJLaberintoPLP.vcxproj.GenerateResource.cache
+C:\Users\patri\Documents\GitHub\Proyectos_POO_Juegos\PJLaberintoPLP\PJLaberintoPLP\Debug\PJLaberintoPLP.vcxprojAssemblyReference.cache
+C:\Users\patri\Documents\GitHub\Proyectos_POO_Juegos\PJLaberintoPLP\PJLaberintoPLP\Debug\PJLaberintoPLP.MyForm.resources
+C:\Users\patri\Documents\GitHub\Proyectos_POO_Juegos\PJLaberintoPLP\PJLaberintoPLP\Debug\PJLaberintoPLP.vcxproj.GenerateResource.cache

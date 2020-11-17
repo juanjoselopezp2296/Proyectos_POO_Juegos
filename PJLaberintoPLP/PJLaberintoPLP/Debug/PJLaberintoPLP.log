@@ -1,6 +1,13 @@
-﻿  CJugador.cpp
+﻿  CAliado.cpp
+  CAssasin.cpp
+  CBloque.cpp
+  CCorrupt.cpp
+  CJugador.cpp
   CObjeto.cpp
+  CVBloque.cpp
+C:\Users\patri\Documents\GitHub\Proyectos_POO_Juegos\PJLaberintoPLP\PJLaberintoPLP\CVBloque.cpp(4,16): warning C4553: '==': result of expression not used; did you intend '='?
   MyForm.cpp
-  Generando código...
-  CJugador.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  PJLaberintoPLP.vcxproj -> C:\Users\51968\source\repos\PJLaberintoPLP\Debug\PJLaberintoPLP.exe
+C:\Users\patri\Documents\GitHub\Proyectos_POO_Juegos\PJLaberintoPLP\PJLaberintoPLP\MyForm.h(212,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  CAliado.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  PJLaberintoPLP.vcxproj -> C:\Users\patri\Documents\GitHub\Proyectos_POO_Juegos\PJLaberintoPLP\Debug\PJLaberintoPLP.exe

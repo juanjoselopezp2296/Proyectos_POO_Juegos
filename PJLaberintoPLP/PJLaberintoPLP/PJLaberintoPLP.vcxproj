@@ -120,13 +120,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CAliado.cpp" />
+    <ClCompile Include="CAssasin.cpp" />
+    <ClCompile Include="CBloque.cpp" />
+    <ClCompile Include="CCorrupt.cpp" />
     <ClCompile Include="CJugador.cpp" />
     <ClCompile Include="CObjeto.cpp" />
+    <ClCompile Include="CVAliado.cpp" />
+    <ClCompile Include="CVBloque.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CAliado.h" />
+    <ClInclude Include="CAssasin.h" />
+    <ClInclude Include="CBloque.h" />
+    <ClInclude Include="CCorrupt.h" />
     <ClInclude Include="CJugador.h" />
     <ClInclude Include="CObjeto.h" />
+    <ClInclude Include="CVAliado.h" />
+    <ClInclude Include="CVBloque.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
