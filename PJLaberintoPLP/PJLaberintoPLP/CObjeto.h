@@ -3,6 +3,9 @@
 class CObjeto {
 	protected:
 		int x, y, dx, dy, ancho, alto, iX, iY, anchoS, altoS;
+		bool colision;
+		enum Direccion direccion;
+		enum Direccion direccionColision;
 	public:
 		CObjeto(int x, int y, int dx, int dy, int ancho, int alto, int iX, int iY, int anchoS, int altoS);
 		~CObjeto();
@@ -17,6 +20,7 @@ class CObjeto {
 		int Get_iY();
 		int Get_anchoS();
 		int Get_altoS();
+		bool Get_colision();
 
 		void Set_x(int x);
 		void Set_y(int y);
@@ -28,4 +32,10 @@ class CObjeto {
 		void Set_iY(int iY);
 		void Set_anchoS(int anchoS);
 		void Set_altoS(int altoS);
+		void Set_colision(bool colision);
+
+		Direccion Get_direccion();
+		void Set_direccion(Direccion direccion);
+		Direccion Get_direccionColision();
+		void Set_direccionColision(Direccion direccionColision);
 };

@@ -11,6 +11,7 @@ CObjeto::CObjeto(int x, int y, int dx, int dy, int ancho, int alto, int iX, int 
 	this->iY = iY;
 	this->anchoS = anchoS;
 	this->altoS = altoS;
+	this->colision = false;
 }
 CObjeto::~CObjeto(){}
 int CObjeto::Get_x(){return x;}
@@ -23,6 +24,7 @@ int CObjeto::Get_iX() { return iX; }
 int CObjeto::Get_iY() { return iY; }
 int CObjeto::Get_anchoS() { return anchoS; }
 int CObjeto::Get_altoS() { return altoS; }
+bool CObjeto::Get_colision() { return colision; }
 
 void CObjeto::Set_x(int x) { this-> x = x; }
 void CObjeto::Set_y(int y) { this->y = y; }
@@ -34,7 +36,7 @@ void CObjeto::Set_iX(int iX) { this->iX = iX; }
 void CObjeto::Set_iY(int iY) { this->iY = iY; }
 void CObjeto::Set_anchoS(int anchoS) { this->anchoS = anchoS; }
 void CObjeto::Set_altoS(int altoS) { this->altoS = altoS; }
-
+void CObjeto::Set_colision(bool colision) { this->colision = colision; }
 
 void CObjeto::Mostrar(System::Drawing::Graphics^ C, System::Drawing::Bitmap^ B) {
 	int anchoFrame = B->Width / anchoS;
@@ -45,4 +47,18 @@ void CObjeto::Mostrar(System::Drawing::Graphics^ C, System::Drawing::Bitmap^ B) 
 
 	/*Dibujar la figura en tu formulario*/
 	C->DrawImage(B, ZonaDibujar, ZonaUsar, System::Drawing::GraphicsUnit::Pixel);
+}
+
+Direccion CObjeto::Get_direccion() {
+	return direccion;
+}
+void CObjeto::Set_direccion(Direccion direccion) {
+	this->direccion = direccion;
+}
+
+Direccion CObjeto::Get_direccionColision() {
+	return direccionColision;
+}
+void CObjeto::Set_direccionColision(Direccion direccionColision) {
+	this->direccionColision = direccionColision;
 }

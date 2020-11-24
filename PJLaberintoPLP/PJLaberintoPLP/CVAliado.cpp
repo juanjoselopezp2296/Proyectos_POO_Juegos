@@ -1,6 +1,6 @@
 #include "Stdafx.h"
 
-CVAliado::CVAliado(int x, int y, int dx, int dy, int ancho, int alto, int iX, int iY, int anchoS, int altoS) {
+CVAliado::CVAliado() {
 	this->ne = 0;
 	this->VAliado == NULL;
 }
@@ -40,5 +40,12 @@ void CVAliado::Agregar(int anchoP, int altoP, int x, int y) {
 }
 
 void CVAliado::Muevanse(int anchoP, int altoP){
+	if (ne != 0 && VAliado != NULL) {
+		for (int i = 0; i < ne; i++)
+			VAliado[i]->Mover(anchoP, altoP);
+	}
+}
 
+CAliado * CVAliado::getAliado(int i){
+	return VAliado[i];
 }

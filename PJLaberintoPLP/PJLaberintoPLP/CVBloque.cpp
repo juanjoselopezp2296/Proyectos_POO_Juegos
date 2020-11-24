@@ -37,3 +37,12 @@ void CVBloque::Agregar(int anchoP, int altoP, int x, int y) {
 	ne++;
 	//delete []VBloqueAux;
 }
+
+
+int  CVBloque::get_ne() {
+	return ne;
+}
+
+CBloque* CVBloque::getBloque(int i) {
+	return VBloque[i];
+}

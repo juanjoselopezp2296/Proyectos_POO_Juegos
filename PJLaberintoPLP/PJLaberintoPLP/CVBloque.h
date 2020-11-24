@@ -10,4 +10,6 @@ class CVBloque {
 		~CVBloque();
 		void Muestrense(System::Drawing::Graphics^ C, System::Drawing::Bitmap^ B);
 		void Agregar(int anchoP, int altoP, int x, int y);
+		int get_ne();
+		CBloque* getBloque(int i);
 };

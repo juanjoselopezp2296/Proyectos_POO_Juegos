@@ -15,17 +15,14 @@ namespace PJLaberintoPLP {
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	private: 
-		CJugador* jugador;
-		CAliado* aliado;
-		CCorrupt* corrupt;
-		CAssasin* assasin;
-		CVBloque* vBloque;
-		/*Ancho y Alto de mi panel*/
-		int gWidth, gHeight;
+		CJuego* juego;
 	private: System::Windows::Forms::PictureBox^ pbCorrupt;
 	private: System::Windows::Forms::PictureBox^ pbAssasin;
 	private: System::Windows::Forms::PictureBox^ pbFondo;
 	private: System::Windows::Forms::PictureBox^ pbBloque;
+	private: System::Windows::Forms::PictureBox^ pbVida;
+
+
 
 
 
@@ -78,6 +75,7 @@ namespace PJLaberintoPLP {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->timerPrincipal = (gcnew System::Windows::Forms::Timer(this->components));
 			this->pnlPrincipal = (gcnew System::Windows::Forms::Panel());
+			this->pbVida = (gcnew System::Windows::Forms::PictureBox());
 			this->pbBloque = (gcnew System::Windows::Forms::PictureBox());
 			this->pbFondo = (gcnew System::Windows::Forms::PictureBox());
 			this->pbAssasin = (gcnew System::Windows::Forms::PictureBox());
@@ -85,6 +83,7 @@ namespace PJLaberintoPLP {
 			this->pbAliado = (gcnew System::Windows::Forms::PictureBox());
 			this->pbJugador = (gcnew System::Windows::Forms::PictureBox());
 			this->pnlPrincipal->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbVida))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbBloque))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbFondo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbAssasin))->BeginInit();
@@ -99,6 +98,7 @@ namespace PJLaberintoPLP {
 			// 
 			// pnlPrincipal
 			// 
+			this->pnlPrincipal->Controls->Add(this->pbVida);
 			this->pnlPrincipal->Controls->Add(this->pbBloque);
 			this->pnlPrincipal->Controls->Add(this->pbFondo);
 			this->pnlPrincipal->Controls->Add(this->pbAssasin);
@@ -107,15 +107,27 @@ namespace PJLaberintoPLP {
 			this->pnlPrincipal->Controls->Add(this->pbJugador);
 			this->pnlPrincipal->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->pnlPrincipal->Location = System::Drawing::Point(0, 0);
-			this->pnlPrincipal->Margin = System::Windows::Forms::Padding(2);
+			this->pnlPrincipal->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pnlPrincipal->Name = L"pnlPrincipal";
-			this->pnlPrincipal->Size = System::Drawing::Size(899, 353);
+			this->pnlPrincipal->Size = System::Drawing::Size(1432, 618);
 			this->pnlPrincipal->TabIndex = 1;
+			// 
+			// pbVida
+			// 
+			this->pbVida->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbVida.Image")));
+			this->pbVida->Location = System::Drawing::Point(608, 219);
+			this->pbVida->Name = L"pbVida";
+			this->pbVida->Size = System::Drawing::Size(260, 260);
+			this->pbVida->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
+			this->pbVida->TabIndex = 6;
+			this->pbVida->TabStop = false;
+			this->pbVida->Visible = false;
 			// 
 			// pbBloque
 			// 
 			this->pbBloque->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbBloque.Image")));
-			this->pbBloque->Location = System::Drawing::Point(372, 31);
+			this->pbBloque->Location = System::Drawing::Point(438, 46);
+			this->pbBloque->Margin = System::Windows::Forms::Padding(4);
 			this->pbBloque->Name = L"pbBloque";
 			this->pbBloque->Size = System::Drawing::Size(310, 310);
 			this->pbBloque->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
@@ -126,7 +138,8 @@ namespace PJLaberintoPLP {
 			// pbFondo
 			// 
 			this->pbFondo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbFondo.Image")));
-			this->pbFondo->Location = System::Drawing::Point(809, 12);
+			this->pbFondo->Location = System::Drawing::Point(1079, 15);
+			this->pbFondo->Margin = System::Windows::Forms::Padding(4);
 			this->pbFondo->Name = L"pbFondo";
 			this->pbFondo->Size = System::Drawing::Size(640, 640);
 			this->pbFondo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
@@ -137,7 +150,8 @@ namespace PJLaberintoPLP {
 			// pbAssasin
 			// 
 			this->pbAssasin->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbAssasin.Image")));
-			this->pbAssasin->Location = System::Drawing::Point(809, 106);
+			this->pbAssasin->Location = System::Drawing::Point(1079, 130);
+			this->pbAssasin->Margin = System::Windows::Forms::Padding(4);
 			this->pbAssasin->Name = L"pbAssasin";
 			this->pbAssasin->Size = System::Drawing::Size(256, 256);
 			this->pbAssasin->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
@@ -148,7 +162,8 @@ namespace PJLaberintoPLP {
 			// pbCorrupt
 			// 
 			this->pbCorrupt->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbCorrupt.Image")));
-			this->pbCorrupt->Location = System::Drawing::Point(547, 10);
+			this->pbCorrupt->Location = System::Drawing::Point(772, 12);
+			this->pbCorrupt->Margin = System::Windows::Forms::Padding(4);
 			this->pbCorrupt->Name = L"pbCorrupt";
 			this->pbCorrupt->Size = System::Drawing::Size(256, 256);
 			this->pbCorrupt->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
@@ -159,7 +174,8 @@ namespace PJLaberintoPLP {
 			// pbAliado
 			// 
 			this->pbAliado->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbAliado.Image")));
-			this->pbAliado->Location = System::Drawing::Point(285, 12);
+			this->pbAliado->Location = System::Drawing::Point(128, 251);
+			this->pbAliado->Margin = System::Windows::Forms::Padding(4);
 			this->pbAliado->Name = L"pbAliado";
 			this->pbAliado->Size = System::Drawing::Size(256, 256);
 			this->pbAliado->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
@@ -170,8 +186,8 @@ namespace PJLaberintoPLP {
 			// pbJugador
 			// 
 			this->pbJugador->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbJugador.Image")));
-			this->pbJugador->Location = System::Drawing::Point(9, 10);
-			this->pbJugador->Margin = System::Windows::Forms::Padding(2);
+			this->pbJugador->Location = System::Drawing::Point(12, 12);
+			this->pbJugador->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pbJugador->Name = L"pbJugador";
 			this->pbJugador->Size = System::Drawing::Size(256, 256);
 			this->pbJugador->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
@@ -181,16 +197,18 @@ namespace PJLaberintoPLP {
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(899, 353);
+			this->ClientSize = System::Drawing::Size(1432, 618);
 			this->Controls->Add(this->pnlPrincipal);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyDown);
 			this->pnlPrincipal->ResumeLayout(false);
 			this->pnlPrincipal->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbVida))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbBloque))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbFondo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbAssasin))->EndInit();
@@ -202,26 +220,17 @@ namespace PJLaberintoPLP {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-
-		jugador = new CJugador(50, 50, 1, 1, 40, 40, 0, 0, 4, 4);
 		this->timerPrincipal->Enabled = true;
-		aliado = new CAliado(30, 30, 2, 2, 40, 40, 0, 0, 4, 4);
-		corrupt = new CCorrupt(10, 10, 3, 3, 40, 40, 0, 0, 4, 4);
-		assasin = new CAssasin(70, 70, 4, 4, 40, 40, 0, 0, 4, 4);
-		vBloque = new CVBloque();
-		srand(time(NULL));
-		vBloque->Agregar(this->pnlPrincipal->Width, this->pnlPrincipal->Height, 1 + rand() % (this->pnlPrincipal->Width + 1 - 1), 1 + rand() % (this->pnlPrincipal->Height + 1 - 1));
-		vBloque->Agregar(this->pnlPrincipal->Width, this->pnlPrincipal->Height, 1 + rand() % (this->pnlPrincipal->Width + 1 - 1), 1 + rand() % (this->pnlPrincipal->Height + 1 - 1));
-		vBloque->Agregar(this->pnlPrincipal->Width, this->pnlPrincipal->Height, 1 + rand() % (this->pnlPrincipal->Width + 1 - 1), 1 + rand() % (this->pnlPrincipal->Height + 1 - 1));
-		vBloque->Agregar(this->pnlPrincipal->Width, this->pnlPrincipal->Height, 1 + rand() % (this->pnlPrincipal->Width + 1 - 1), 1 + rand() % (this->pnlPrincipal->Height + 1 - 1));
+		juego = new CJuego(this->pnlPrincipal->Width, this->pnlPrincipal->Height);
+		//srand(time(NULL));
 	}
 	private: System::Void timerPrincipal_Tick(System::Object^ sender, System::EventArgs^ e) {
 		Graphics^ g;
 
 		g = this->pnlPrincipal->CreateGraphics(); //Contenedor que va tener todas la animaciones
 		//Guardamos las dimensiones de mi contenedor
-		gWidth = this->pnlPrincipal->Width;//(int)g->VisibleClipBounds.Width;
-		gHeight = this->pnlPrincipal->Height;//(int)g->VisibleClipBounds.Height;
+		int gWidth = this->pnlPrincipal->Width;//
+		int gHeight = this->pnlPrincipal->Height;//
 
 		//Reservamos un espacio para poner en el buffer
 		BufferedGraphicsContext^ espacioBuffer = BufferedGraphicsManager::Current;
@@ -233,25 +242,18 @@ namespace PJLaberintoPLP {
 		buffer->Graphics->DrawImage(this->pbFondo->Image, 0, 0, gWidth, gHeight);
 
 		//Contener mi sprite de jugador
-		//LINK -- System::Drawing::Bitmap^ G2 = gcnew Bitmap(this->pboxJugador->Image);
-		//System::Drawing::Bitmap^ G1 = gcnew Bitmap(this->pboxFondo->Image);
 		System::Drawing::Bitmap^ G2 = gcnew Bitmap(this->pbJugador->Image);
 		System::Drawing::Bitmap^ G3 = gcnew Bitmap(this->pbAliado->Image);
 		System::Drawing::Bitmap^ G4 = gcnew Bitmap(this->pbCorrupt->Image);
 		System::Drawing::Bitmap^ G5 = gcnew Bitmap(this->pbAssasin->Image);
 		System::Drawing::Bitmap^ G6 = gcnew Bitmap(this->pbBloque->Image);
+		System::Drawing::Bitmap^ G7 = gcnew Bitmap(this->pbVida->Image);
 
 		G3->MakeTransparent(G3->GetPixel(1, 1));
-		//Mostrar tu jugador en pantalla
-		jugador->Mostrar(buffer->Graphics, G2);
-		jugador->Mover(gWidth, gHeight);
-		aliado->Mostrar(buffer->Graphics, G3);
-		aliado->Mover(gWidth, gHeight);
-		corrupt->Mostrar(buffer->Graphics, G4);
-		corrupt->Mover(gWidth, gHeight);
-		assasin->Mostrar(buffer->Graphics, G5);
-		assasin->Mover(gWidth, gHeight);
-		vBloque->Muestrense(buffer->Graphics, G6);
+		G7->MakeTransparent(G7->GetPixel(1, 1));
+		juego->play(buffer->Graphics, G2, G3, G4, G5, G6, G7);
+		
+
 		buffer->Render(g);
 
 		delete g;
@@ -263,5 +265,21 @@ namespace PJLaberintoPLP {
 		delete buffer;
 		delete espacioBuffer;
 	}
+private: System::Void MyForm_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	
+	if (e->KeyData == Keys::Up) {
+		juego->colisionesMuros(Direccion::Arriba);
+		juego->movJugador(1);
+	}else if (e->KeyData == Keys::Down) {
+		juego->colisionesMuros(Direccion::Abajo);
+		juego->movJugador(2);
+	}else if (e->KeyData == Keys::Right) {
+		juego->colisionesMuros(Direccion::Derecha);
+		juego->movJugador(3);		
+	}else if (e->KeyData == Keys::Left) {
+		juego->colisionesMuros(Direccion::Izquierda);
+		juego->movJugador(4);
+	}
+}
 };
 }

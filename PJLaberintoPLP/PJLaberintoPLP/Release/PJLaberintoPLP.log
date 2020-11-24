@@ -1,0 +1,20 @@
+﻿  CAliado.cpp
+  CAssasin.cpp
+  CBloque.cpp
+  CCorrupt.cpp
+  CJugador.cpp
+  CObjeto.cpp
+  CVAliado.cpp
+C:\Users\51968\Documents\GitHub\Proyectos C++\Proyectos-POO---Juegos\PJLaberintoPLP\PJLaberintoPLP\CVAliado.cpp(5,16): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+  CVBloque.cpp
+C:\Users\51968\Documents\GitHub\Proyectos C++\Proyectos-POO---Juegos\PJLaberintoPLP\PJLaberintoPLP\CVBloque.cpp(4,16): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+  CVida.cpp
+  CVVida.cpp
+C:\Users\51968\Documents\GitHub\Proyectos C++\Proyectos-POO---Juegos\PJLaberintoPLP\PJLaberintoPLP\CVVida.cpp(4,14): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+  MyForm.cpp
+C:\Users\51968\Documents\GitHub\Proyectos C++\Proyectos-POO---Juegos\PJLaberintoPLP\PJLaberintoPLP\MyForm.h(239,13): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Generando código...
+  CAliado.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+LINK : error LNK2001: símbolo externo _main sin resolver
+C:\Users\51968\Documents\GitHub\Proyectos C++\Proyectos-POO---Juegos\PJLaberintoPLP\Release\PJLaberintoPLP.exe : fatal error LNK1120: 1 externos sin resolver
