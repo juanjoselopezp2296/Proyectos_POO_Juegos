@@ -130,6 +130,7 @@
     <ClCompile Include="CJugador.cpp" />
     <ClCompile Include="CObjeto.cpp" />
     <ClCompile Include="CVAliado.cpp" />
+    <ClCompile Include="CVAssasin.cpp" />
     <ClCompile Include="CVBloque.cpp" />
     <ClCompile Include="CVCorrupt.cpp" />
     <ClCompile Include="CVida.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="CJugador.h" />
     <ClInclude Include="CObjeto.h" />
     <ClInclude Include="CVAliado.h" />
+    <ClInclude Include="CVAssasin.h" />
     <ClInclude Include="CVBloque.h" />
     <ClInclude Include="CVCorrupt.h" />
     <ClInclude Include="CVida.h" />

@@ -12,6 +12,7 @@
 #include "CAssasin.h"
 #include "CBloque.h"
 
+#include "CVAssasin.h"
 #include "CVBloque.h"
 #include "CVAliado.h"
 #include "CVCorrupt.h"

@@ -1,6 +1,7 @@
 ﻿  CJuego.cpp
-C:\Users\51968\Documents\GitHub\Proyectos C++\Proyectos-POO---Juegos\PJLaberintoPLP\PJLaberintoPLP\CJuego.cpp(181,18): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\51968\Documents\GitHub\Proyectos C++\Proyectos-POO---Juegos\PJLaberintoPLP\PJLaberintoPLP\CJuego.cpp(183,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\51968\Documents\GitHub\Proyectos C++\Proyectos-POO---Juegos\PJLaberintoPLP\PJLaberintoPLP\CJuego.cpp(245,7): warning C4554: "&": compruebe la prioridad de operador para posibles errores; utilice paréntesis para indicar la prioridad
-  CAliado.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  PJLaberintoPLP.vcxproj -> C:\Users\51968\Documents\GitHub\Proyectos C++\Proyectos-POO---Juegos\PJLaberintoPLP\Debug\PJLaberintoPLP.exe
+C:\Users\patri\Documents\GitHub\Proyectos_POO_Juegos\PJLaberintoPLP\PJLaberintoPLP\CJuego.cpp(181,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\patri\Documents\GitHub\Proyectos_POO_Juegos\PJLaberintoPLP\PJLaberintoPLP\CJuego.cpp(183,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\patri\Documents\GitHub\Proyectos_POO_Juegos\PJLaberintoPLP\PJLaberintoPLP\CJuego.cpp(227,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\patri\Documents\GitHub\Proyectos_POO_Juegos\PJLaberintoPLP\PJLaberintoPLP\CJuego.cpp(270,7): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+  CAliado.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  PJLaberintoPLP.vcxproj -> C:\Users\patri\Documents\GitHub\Proyectos_POO_Juegos\PJLaberintoPLP\Debug\PJLaberintoPLP.exe

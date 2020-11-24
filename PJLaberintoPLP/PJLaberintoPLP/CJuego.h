@@ -9,7 +9,7 @@ class CJuego
 		CJugador* jugador;
 		CVAliado* vAliado;
 		CVCorrupt* vCorrupt;
-		CAssasin* assasin;
+		CVAssasin* vAssasin;
 		CVBloque* vBloque;
 
 	public:
@@ -25,6 +25,7 @@ class CJuego
 
 		void movJugador(int direccion);
 		void crearBloques();
+		void randomBloques(int x1, int y1, int x2, int y2);
 		void crearCorrupts();
 		void crearVidas();
 		void colisionesMuros(enum Direccion direccion);

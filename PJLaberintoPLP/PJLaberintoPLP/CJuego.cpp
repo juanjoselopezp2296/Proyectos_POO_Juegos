@@ -12,7 +12,7 @@ CJuego::CJuego(int gWidth, int gHeight){
 	jugador = new CJugador(80, 136, 2, 2, 33, 33, 0, 0, 4, 4);
 	vAliado = new CVAliado();
 	vCorrupt = new CVCorrupt();
-	assasin = new CAssasin(70, 70, 4, 4, 40, 40, 0, 0, 4, 4);
+	vAssasin = new CVAssasin();
 	vBloque = new CVBloque();
 
 	/*Generación de Bloques*/
@@ -42,8 +42,8 @@ void CJuego::play(
 	//jugador->Mover(gWidth, gHeight);
 	vCorrupt->Muestrense(C, BCorrupt);
 	vCorrupt->Muevanse(gWidth, gHeight);
-	assasin->Mostrar(C, BAssasin);
-	assasin->Mover(gWidth, gHeight);
+	vAssasin->Muestrense(C, BAssasin);
+	vAssasin->Muevanse(gWidth, gHeight);
 	vBloque->Muestrense(C, BBloque);
 	vAliado->Muestrense(C, BAliado);
 	vAliado->Muevanse(gWidth, gHeight);
@@ -218,19 +218,32 @@ void CJuego::crearCorrupts() {
 	}
 
 }
-void CJuego::crearBloques() {
-	int max = 3;
+
+void CJuego::randomBloques(int x1, int y1, int x2, int y2) {
+	int max = 1;
 	int min = 0;
 	int range = (max - min) + 1;
 
 	srand(time(NULL));
 	int randnum = (rand() % range);
 
-	for(int i = 0; i < 5; i++){
-		switch (randnum) {
-		}
+	switch (randnum) {
+		case 0: vBloque->Agregar(gWidth, gHeight, x1, y1); break;
+		case 1: vBloque->Agregar(gWidth, gHeight, x2, y2); break;
 	}
+}
+void CJuego::crearBloques() {
 
+
+		randomBloques(140, 140, 140, 260);
+		randomBloques(230, 170, 230, 290);
+		randomBloques(380, 170, 380, 260);
+		randomBloques(500, 170, 500, 290);
+		randomBloques(620, 140, 590, 230);
+		randomBloques(770, 80, 770, 230);
+		randomBloques(920, 80, 890, 380);
+
+	
 	for (int i = 0; i < 13; i++) {
 		for (int j = 0; j < 32; j++) {
 			if (i == 0 || i == 12 || j == 0 || j == 31)
@@ -296,6 +309,7 @@ void CJuego::crearBloques() {
 		}
 	}
 }
+
 void CJuego::crearVidas() {
 
 	int xVida = 50;
